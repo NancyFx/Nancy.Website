@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <title>Nancy - Lightweight Web Framework for .net</title>
+  <link rel="icon" type="image/vnd.microsoft.icon" href="http://nancyfx.org/favicon.ico">
+  <style type="text/css">
+    * {
+      margin: 0;
+    }
+    
+    html, body {
+      height: 100%;
+    }
+    
+    body {
+      background-color: black;
+    }
+    
+    .wrapper {
+      min-height: 100%;
+      height: auto !important;
+      height: 100%;
+      margin: 0 auto -12px;
+    }
+    
+    .footer, .push {
+      height: 12px;
+      width: 750px;
+      margin: 0px auto; 
+    }
+
+    #container {
+      margin: 0px auto; 
+      width: 750px; 
+      padding-top: 32px;
+    }
+    
+    h1 {
+      display: block;
+      padding-top: 287px;
+      padding-bottom: 0px;
+      margin: 0px;
+      height: 0px;
+      overflow: hidden;
+      float: left;
+      width: 256px;
+      background: transparent url(images/logo.png) no-repeat top left;
+    }
+    
+    h2 {
+      color: white;
+      font-family: Consolas,'Andale Mono','Lucida Console','DejaVu Sans Mono',monospace;
+      font-size: 30px;
+      font-weight: normal;
+    }
+    
+    #instructions {
+      margin-left: 55px;
+      padding-top: 10px;
+      clear: left;
+    }
+    
+    .code {
+      color: white;
+      font-family: Consolas,'Andale Mono','Lucida Console','DejaVu Sans Mono',monospace;
+      padding: 1.2em 2em;
+      font-size: 0.9em;
+    }
+    .code .kwrd { color: #b76927; }
+    .code .name { color: #e0be5a; }
+    .code .str  { color: #91c456; }
+       
+    #links {
+      display: block;
+      color: white;
+      float: right;
+      margin-top: 46px;
+      text-align: right;
+      list-style-type: none;
+    }
+    
+    #links a {
+      color: white;
+      text-decoration: none;
+      font-family: Consolas,'Andale Mono','Lucida Console','DejaVu Sans Mono',monospace;
+      font-size: 30px;
+    }
+    
+    #links a:hover {
+      text-decoration: underline;
+    }
+    
+    #footer {
+      font-family: Consolas,'Andale Mono','Lucida Console','DejaVu Sans Mono',monospace;
+      font-size: 10px;
+      text-align: right;
+      color: #353535;
+      width: 750px; 
+    }
+  </style>
+<style type="text/css"></style></head>
+<body>
+  <div class="wrapper">
+    <div id="container">
+      <div id="header">
+        <h1>Nancy - Lightweight Web Framework for .net</h1>
+        <ul id="links">
+          <li><a href="http://nancyfx.org/#"><i>Home</i></a></li>
+          <li><a href="http://nuget.org/packages?q=nancy&sortOrder=package-download-count" target="_blank">Download</a></li>
+          <li><a href="https://github.com/NancyFx" target="_blank">Github</a></li>
+          <li><a href="https://github.com/NancyFx/Nancy/wiki/Documentation" target="_blank">Docs</a></li>
+          <li><a href="https://groups.google.com/forum/#!forum/nancy-web-framework" target="_blank">Forum</a> / <a href="http://jabbr.net/#/rooms/nancyfx" target="_blank">Chat</a></li>
+          <li><a href="http://nancyfx.org/contribs.html">Contributors</a></li>
+        </ul>
+      </div>
+      
+      <div id="instructions">
+        <h2>Install</h2>
+        <pre class="code">PM> Install-Package Nancy</pre>
+        <h2>Write</h2>
+<pre class="code">
+<span class="kwrd">public</span> <span class="kwrd">class</span> <span class="name">SampleModule</span> : <span class="name">Nancy.NancyModule</span>
+{
+    <span class="kwrd">public</span> SampleModule()
+    {
+        Get[<span class="str">"/"</span>] = _ => <span class="str">"Hello World!"</span>;
+    }
+}</pre>
+        <h2>Go!</h2>
+      </div>
+    </div>
+    
+    <div class="push"></div>
+  </div>
+
+  <div class="footer">
+    <div id="footer">Copyright (c) 2010 Andreas H&aring;kansson, Steven Robbins and contributors</div>
+  </div>
+  
+  <a href="http://pledgie.com/campaigns/17251" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="images/donate.png" alt="Support the project and donate."></a>
+
+
+</body></html>
