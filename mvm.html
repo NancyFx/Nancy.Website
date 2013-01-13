@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Nancy MVM Program</title>
+    <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
+    <script src="http://code.jquery.com/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+        }
+
+        html, body {
+            height: 100%;
+            color: white;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .wrapper {
+            min-height: 100%;
+            height: auto !important;
+            height: 100%;
+            margin: 0 auto -12px;
+        }
+
+        .footer, .push {
+            height: 12px;
+            width: 750px;
+            margin: 0px auto;
+        }
+
+        #container {
+            margin: 0px auto;
+            width: 750px;
+            padding-top: 32px;
+        }
+
+        #footer {
+            font-family: Consolas,'Andale Mono','Lucida Console','DejaVu Sans Mono',monospace;
+            font-size: 10px;
+            text-align: right;
+            color: #353535;
+            width: 750px;
+        }
+
+        h1 {
+            display: block;
+            padding-top: 287px;
+            padding-bottom: 0px;
+            margin: 0px;
+            height: 0px;
+            overflow: hidden;
+            float: left;
+            width: 256px;
+            background: transparent url(images/logo.png) no-repeat top left;
+        }
+
+        h2 {
+            color: white;
+            font-family: Consolas,'Andale Mono','Lucida Console','DejaVu Sans Mono',monospace;
+            font-size: 24px;
+            font-weight: normal;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        #title {
+            display: block;
+            color: white;
+            float: right;
+            margin-top: 40px;
+            text-align: right;
+            list-style-type: none;
+            color: white;
+            text-decoration: none;
+            font-family: Consolas,'Andale Mono','Lucida Console','DejaVu Sans Mono',monospace;
+            font-size: 30px;
+        }
+
+        #header {
+            float: left;
+            width: 100%;
+        }
+
+        #content {
+            float: left;
+            margin-top: 5px;
+            margin-left: 50px;
+            margin-right: 50px;
+            font-family: Consolas,'Andale Mono','Lucida Console','DejaVu Sans Mono',monospace;
+            color: #aaaaaa;
+        }
+
+        #minions {
+            float: left;
+            font-family: Consolas,'Andale Mono','Lucida Console','DejaVu Sans Mono',monospace;
+            color: #aaaaaa;
+        }
+
+        #minions a {
+            color: white;
+            text-decoration: none;
+            font-family: Consolas,'Andale Mono','Lucida Console','DejaVu Sans Mono',monospace;
+        }
+
+        #minions a:hover {
+            text-decoration: underline;
+        }
+
+        p {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            text-align: justify;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(function() {
+            Array.prototype.shuffle = function() {
+                var i = this.length, j, temp_i, temp_j;
+                if ( i == 0 ) return false;
+                while ( --i ) {
+                    j       = Math.floor( Math.random() * ( i + 1 ) );
+                    temp_i   = this[i];
+                    temp_j   = this[j];
+                    this[i] = temp_j;
+                    this[j] = temp_i;
+                }
+                return this;
+            };
+
+            var mvms = [
+                { name: "Prabir Shrestha",  gravatar_id: "08580f0e341ffc9146050ac8d368a8e2", login: "prabirshrestha", url: "http://blog.prabir.me/"},
+                { name: "Jonathan Channon",  gravatar_id: "62e4df82d52221751142c68ee5d2ae0b", login: "jchannon", url: "http://www.jonathanchannon.com/"},
+                { name: "Phillip Haydon",  gravatar_id: "ff94721f530a7cfd1bfa19b7e6e8af8f", login: "phillip-haydon", url: "http://www.philliphaydon.com/"},
+                { name: "Richard Cirerol",  gravatar_id: "4aa946f4054deca706c0c0ddcd98ab90", login: "codeprogression", url: "http://elegantcode.com/about/richard-cirerol/"}
+            ];
+
+            $("#minionTemplate").tmpl(mvms.shuffle()).appendTo("#minions");
+        });
+    </script>
+</head>
+<body>
+<div class="wrapper">
+    <div id="container">
+        <div id="header">
+            <a href="/"><h1>Nancy - Lightweight Web Framework for .net</h1></a>
+
+            <div id="title">
+                <img src="images/mvm.png" alt="Nancy Most Valued Minion"/>
+            </div>
+        </div>
+        <div id="content">
+            <h2>Nancy Most Valued Minion Award</h2>
+            <p>
+                The Nancy Most Valued Minion Award is a designation awarded to those who have proven themselves to be
+                truly exceptional members of the Nancy community.
+            </p>
+            <p>
+                Whether it's providing support on the forums, Jabbr room or Stack Overflow, providing a multitude of pull
+                requests, or just helping with ideas, the Nancy MVMs have shown they we well and truly on board
+                the Super Duper Happy Path!
+            </p>
+            <p>
+                Unfortunately we're not able to offer our MVMs large amounts of expensive software, or free conferences;
+                but they do have our gratitude, and the rights to use this awesome badge on their blogs! Unlike other
+                similarly named programs you may have heard of, the lack of thinly veiled bribery in the MVM program does
+                mean that our members can be relied upon to provide impartial advice and support, even suggesting when
+                Nancy may well not fit your needs.
+            </p>
+            <p></p>
+            <h2>Current Minions</h2>
+            <p>The current holders of this prestigious award, in no particular order, are:</p>
+            <div id="minions">
+            </div>
+        </div>
+    </div>
+
+    <a href="http://pledgie.com/campaigns/17251" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="images/donate.png" alt="Support the project and donate."></a>
+    <div class="push"></div>
+</div>
+<div class="footer">
+    <div id="footer">This tongue in cheek page is Copyright (c) 2010 Andreas H&aring;kansson, Steven Robbins and contributors</div>
+</div>
+<script id="minionTemplate" type="text/x-jQuery-tmpl">
+    <div style="clear:both; margin: 10px 10px 10px 30px; height: 100px; width: 600px;">
+        <img src="http://gravatar.com/avatar/${gravatar_id}" alt="${name || login}" style="float:left; margin-top: 20px;" />
+        <div style="float:left; margin-left: 12px; margin-top: 2px;">
+            <h2>${name ? name.replace(" ", " '" + login + "' ") + "!" : login}</h2>
+            <a href="https://github.com/${login}" target="_blank">https://github.com/${login}</a><br/>
+            <a href="${url}" target="_blank">${url}</a>
+        </div>
+    </div>
+</script>
+</body>
+</html>
