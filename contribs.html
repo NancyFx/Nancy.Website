@@ -170,7 +170,7 @@
     {{each data}}
       {{if login != "invalid-email-address"}}  
         <div style="clear:both; margin: 8px; height: 80px; width: 600px;">
-            <img src="http://gravatar.com/avatar/${gravatar_id}" alt="${name || login}" style="float:left;" />
+            <img src="${avatar_url}" alt="${name || login}" style="float:left; width:80px;" />
             <div style="float:left; margin-left: 12px;">
               <h3>#${$index + 1} (${contributions} commits)</h3>
               <h2>${name ? name.replace(" ", " '" + login + "' ") + "!" : login}</h2>
