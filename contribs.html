@@ -172,7 +172,7 @@
         <div style="clear:both; margin: 8px; height: 80px; width: 600px;">
             <img src="${avatar_url}" alt="${name || login}" style="float:left; width:80px;" />
             <div style="float:left; margin-left: 12px;">
-              <h3>#${$index + 1} (${contributions} commits)</h3>
+              <h3>#${$index + 1} (<a href="https://github.com/NancyFx/Nancy/commits/master?author=${login}">${contributions} commits</a>)</h3>
               <h2>${name ? name.replace(" ", " '" + login + "' ") + "!" : login}</h2>
               <a href="https://github.com/${login}">https://github.com/${login}</a>
             </div>
