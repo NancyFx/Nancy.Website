@@ -37,7 +37,7 @@
       return 0;
     });
           
-    $("#contributorTemplate").tmpl(contributors).appendTo("#contributors");
+    $("#contributorTemplate").tmpl({ data: contributors}).appendTo("#contributors");
   }
   
   $(function() {
