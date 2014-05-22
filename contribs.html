@@ -13,15 +13,18 @@
   // if you steal this code you need to buy @Grumpydev and @TheCodeJunkie
   // beer and/or cake ;-)
   // http://pledgie.com/campaigns/17251
-  function getContribs(page, currentContribs) {
+  function getContribs(page, contribs) {
     $.ajax({
         url: 'https://api.github.com/repos/NancyFx/Nancy/contributors?per_page=100&page=' + page,
         dataType: 'jsonp',
         success: function(result) {
+          var currentPage = page;
+          var currentContribs = contribs;
+          
           if (!result.data || !result.data.length || result.data.length === 0) {
             bindContribs(currentContribs);
           } else {
-            getContribs(page + 1, currentContribs.concat(result.data));
+            getContribs(currentPage + 1, currentContribs.concat(result.data));
           }
         }
     });
