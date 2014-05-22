@@ -15,7 +15,7 @@
   // http://pledgie.com/campaigns/17251
   function getContribs(page, currentContribs) {
     $.ajax({
-        url: 'https://api.github.com/repos/NancyFx/Nancy/contributors?page=' + page,
+        url: 'https://api.github.com/repos/NancyFx/Nancy/contributors?per_page=100&page=' + page,
         dataType: 'jsonp',
         success: function(result) {
           if (!result.data || !result.data.length || result.data.length === 0) {
