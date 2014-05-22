@@ -13,20 +13,32 @@
   // if you steal this code you need to buy @Grumpydev and @TheCodeJunkie
   // beer and/or cake ;-)
   // http://pledgie.com/campaigns/17251
-  $(function() {
+  function getContribs(page, currentContribs) {
     $.ajax({
-        url: 'https://api.github.com/repos/NancyFx/Nancy/contributors',
+        url: 'https://api.github.com/repos/NancyFx/Nancy/contributors?page=' + page,
         dataType: 'jsonp',
         success: function(result) {
-          result.data = result.data.sort(function (a, b) { 
-            if (a.contributions > b.contributions) return -1;
-            if (a.contributions < b.contributions) return 1;
-            return 0;
-          });
-          
-          $("#contributorTemplate").tmpl(result).appendTo("#contributors");
+          if (!result.data || !result.data.length || result.data.length === 0) {
+            bindContribs(currentContribs);
+          } else {
+            getContribs(page + 1, currentContribs.concat(result.data));
+          }
         }
     });
+  }
+  
+  function bindContribs(currentContribs) {
+    var contributors = currentContribs.sort(function (a, b) { 
+      if (a.contributions > b.contributions) return -1;
+      if (a.contributions < b.contributions) return 1;
+      return 0;
+    });
+          
+    $("#contributorTemplate").tmpl(contributors).appendTo("#contributors");
+  }
+  
+  $(function() {
+    getContribs(1, []);
 
     analytics.initialize({'Google Analytics' : 'UA-37641480-1'});
   });
